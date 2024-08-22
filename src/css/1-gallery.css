@@ -1,0 +1,22 @@
+
+.gallery{
+display: flex;
+flex-direction: column;
+gap: 24px;
+max-width: 1128px;
+min-height: 370px;
+justify-content: center;
+align-items: center;
+}
+@media screen and (min-width: 664px) {
+  .gallery{
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: calc((100% - 24px) /2);
+  }
+}
+@media screen and (min-width: 1128px) {
+  .gallery {
+    flex-basis: calc((100% - 72px) / 3);
+  }
+}
