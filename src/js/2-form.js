@@ -7,8 +7,8 @@ const forms = document.querySelector('.feedback-form');
 
 function formObject(event) {
   const form = event.currentTarget;
-  const inpyt = form.email.value;
-  const textarea = form.message.value;
+  const inpyt = form.email.value.trim();
+  const textarea = form.message.value.trim();
   formData.email = `${inpyt}`;
   formData.message = `${textarea}`;
 }
@@ -22,9 +22,9 @@ function sendingMessage(event) {
     alert('Fill please all fields.');
   } else {
     console.log(formData);
-    localStorage.removeItem('feedback-form-state');
-    formData.email = '';
-    formData.message = '';
+    // localStorage.removeItem('feedback-form-state');
+    // formData.email = '';
+    // formData.message = '';
     email.value = '';
     textarea.value = '';
   }
