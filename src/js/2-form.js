@@ -11,6 +11,7 @@ function formObject(event) {
   const textarea = form.message.value.trim();
   formData.email = `${inpyt}`;
   formData.message = `${textarea}`;
+  localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 }
 forms.addEventListener('input', formObject);
 
@@ -22,13 +23,12 @@ function sendingMessage(event) {
     alert('Fill please all fields.');
   } else {
     console.log(formData);
-    // localStorage.removeItem('feedback-form-state');
-    // formData.email = '';
-    // formData.message = '';
+    localStorage.removeItem('feedback-form-state');
+    formData.email = '';
+    formData.message = '';
     email.value = '';
     textarea.value = '';
   }
-  localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 }
 forms.addEventListener('submit', sendingMessage);
 
